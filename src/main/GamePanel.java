@@ -11,6 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
+import main.Constants;
+
 
 public class GamePanel extends JPanel implements Runnable {
 	private boolean running;
@@ -105,6 +107,7 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	public void draw() {
+		
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, MainMenu.WIDTH, MainMenu.HEIGHT); 
 		

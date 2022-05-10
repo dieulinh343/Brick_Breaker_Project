@@ -22,7 +22,7 @@ public class Paddle {
 	}
 	
 	public void draw(Graphics2D g) {
-		g.setColor(Color.DARK_GRAY);
+		g.setColor(Constants.PADDLE_COLOR);
 		g.fillRect((int) x, y, width, height);
 		
 	}

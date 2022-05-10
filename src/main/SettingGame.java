@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -19,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
+import main.Constants;
 
 
 public class SettingGame extends JFrame implements ActionListener{
@@ -44,12 +46,16 @@ public class SettingGame extends JFrame implements ActionListener{
         settingsLabel.setFont(new Font("Ariel", Font.BOLD, 40));
         
         //Creates the paddle color settings
-        JLabel paddleColorLabel = new JLabel("Paddle colour: ");
+        JLabel paddleColorLabel = new JLabel("PADDLE COLOUR:");
         paddleColorLabel.setFont(new Font("Ariel", Font.BOLD, 20));
-        JRadioButton whitePaddleColorButton = new JRadioButton("White");
-        JRadioButton yellowPaddleColorButton = new JRadioButton("Yellow");
-        JRadioButton bluePaddleColorButton = new JRadioButton("Blue");
-        JRadioButton redPaddleColorButton = new JRadioButton("Red");
+        JRadioButton whitePaddleColorButton = new JRadioButton("WHITE");
+        whitePaddleColorButton.setActionCommand("Paddle White");
+        JRadioButton yellowPaddleColorButton = new JRadioButton("YELLOW");
+        yellowPaddleColorButton.setActionCommand("Paddle Yellow");
+        JRadioButton bluePaddleColorButton = new JRadioButton("BLUE");
+        bluePaddleColorButton.setActionCommand("Paddle Blue");
+        JRadioButton redPaddleColorButton = new JRadioButton("RED");
+        redPaddleColorButton.setActionCommand("Paddle Red");
         ButtonGroup paddleColorGroup = new ButtonGroup();
         
         paddleColorGroup.add(whitePaddleColorButton);
@@ -66,10 +72,15 @@ public class SettingGame extends JFrame implements ActionListener{
         JLabel ballColorLabel = new JLabel("Ball color:");
         ballColorLabel.setFont(new Font("Ariel", Font.BOLD, 20));
         JRadioButton greyBallButton = new JRadioButton("Grey");
+        greyBallButton.setActionCommand("Ball Grey");
         JRadioButton redBallButton = new JRadioButton("Red");
+        redBallButton.setActionCommand("Ball Red");
         JRadioButton whiteBallButton = new JRadioButton("White");
+        whiteBallButton.setActionCommand("Ball White");
         JRadioButton yellowBallButton = new JRadioButton("Yellow");
+        yellowBallButton.setActionCommand("Ball Yellow");
         JRadioButton blueBallButton = new JRadioButton("Blue");
+        blueBallButton.setActionCommand("Ball Blue");
         ButtonGroup ballColorGroup = new ButtonGroup();
         ballColorGroup.add(greyBallButton);
         ballColorGroup.add(redBallButton);
@@ -110,6 +121,45 @@ public class SettingGame extends JFrame implements ActionListener{
         difficultyPanel.add(normalButton, BorderLayout.EAST);
         difficultyPanel.add(hardButton, BorderLayout.EAST);
         
+      //button to save data
+        JButton saveButton = new JButton("Save");
+        saveButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		if (e.getActionCommand().equals("Save")) {
+        			
+        			//set the customized color of the paddle
+        			if (paddleColorGroup.getSelection().getActionCommand().equals("Paddle White")) {
+        				Constants.PADDLE_COLOR = Color.white;
+        			} else if (paddleColorGroup.getSelection().getActionCommand().equals("Paddle Yellow")) {
+        				Constants.PADDLE_COLOR = Color.yellow;
+        			} else if (paddleColorGroup.getSelection().getActionCommand().equals("Paddle Blue")) {
+        				Constants.PADDLE_COLOR = Color.blue;
+        			} else if (paddleColorGroup.getSelection().getActionCommand().equals("Paddle Red")) {
+        				Constants.PADDLE_COLOR = Color.red;
+        			}
+        			
+        			//set the customized color of the ball
+        			if (ballColorGroup.getSelection().getActionCommand().equals("Ball Grey")) {
+        				Constants.BALL_COLOR = Color.gray;
+        			} else if (ballColorGroup.getSelection().getActionCommand().equals("Ball Red")) {
+        				Constants.BALL_COLOR = Color.red;
+        			} else if (ballColorGroup.getSelection().getActionCommand().equals("Ball White")) {
+        				Constants.BALL_COLOR = Color.white;
+        			} else if (ballColorGroup.getSelection().getActionCommand().equals("Ball Yellow")) {
+        				Constants.BALL_COLOR = Color.yellow;
+        			} else if (ballColorGroup.getSelection().getActionCommand().equals("Ball Blue")) {
+        				Constants.BALL_COLOR = Color.blue;
+        			}
+        			
+        			
+        		}
+        		System.out.println(Constants.PADDLE_COLOR);
+        		System.out.println(Constants.BALL_COLOR);
+
+        	}
+        });
+
+        
         //Main menu at the bottom
         JButton menuButton = new JButton("MAIN MENU");
         menuButton.addActionListener(new ActionListener() {
@@ -127,7 +177,9 @@ public class SettingGame extends JFrame implements ActionListener{
         middlePanel.add(ballColorPanel);
         middlePanel.add(displayModePanel);
         middlePanel.add(difficultyPanel);
+        bottomPanel.add(saveButton);
         bottomPanel.add(menuButton);
+
         
         //Setting the size of frame
         
