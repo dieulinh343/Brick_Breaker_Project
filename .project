@@ -14,4 +14,21 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/powerUp1.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/powerUp1.png</locationURI>
+		</link>
+		<link>
+			<name>src/powerUp4.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/powerUp4.png</locationURI>
+		</link>
+		<link>
+			<name>src/powerUp6.png</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/powerUp6.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
