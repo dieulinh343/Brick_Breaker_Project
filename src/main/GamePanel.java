@@ -19,6 +19,7 @@ public class GamePanel extends JPanel implements Runnable {
 	private MouseListener MouseListener;
 	private int mouseX;
 	
+	PowerUps powerups; //them
 	Ball ball;
 	Paddle paddle;
 	Map map;
@@ -34,6 +35,7 @@ public class GamePanel extends JPanel implements Runnable {
 		paddle = new Paddle();
 		map = new Map(6, 10);
 		HUD = new HUD();
+		powerups = new PowerUps(250, 200, "powerUps1"); //them
 		MouseListener = new MouseListener();
 		addMouseMotionListener(MouseListener);
 		
@@ -112,6 +114,7 @@ public class GamePanel extends JPanel implements Runnable {
 		paddle.draw(g);
 		map.draw(g);
 		HUD.draw(g);
+		powerUps.draw(g);
 		
 		if (map.winCheck() == true) {
 			drawWin();

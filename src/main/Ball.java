@@ -45,7 +45,7 @@ public class Ball {
 	
 	public void draw(Graphics2D g) {
 		 g.setColor(Color.DARK_GRAY);
-		 g.setStroke(new BasicStroke(1));
+		 g.setStroke(new BasicStroke(4));
 		 g.drawOval((int) x, (int) y, ballSize, ballSize);
 		 
 	}
