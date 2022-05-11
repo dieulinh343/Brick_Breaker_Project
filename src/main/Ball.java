@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import main.Constants;
 
 public class Ball {
 	private double x, y, dx, dy;
@@ -44,7 +45,7 @@ public class Ball {
 	public boolean getLose() {return this.lose;}
 	
 	public void draw(Graphics2D g) {
-		 g.setColor(Color.DARK_GRAY);
+		 g.setColor(Constants.BALL_COLOR);
 		 g.setStroke(new BasicStroke(4));
 		 g.drawOval((int) x, (int) y, ballSize, ballSize);
 		 
