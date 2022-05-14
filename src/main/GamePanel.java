@@ -87,8 +87,8 @@ public class GamePanel extends JPanel implements Runnable {
 			}
 		}
 		
-		if (powerupRect1.intersects(paddleRect) && count1 < 2) {
-			paddleWidth += 30;
+		if (powerupRect1.intersects(paddleRect) && count1 == 0) {
+			paddleWidth += 50;
 			paddle = new Paddle(paddleWidth);
 			count1 +=1;
 			if (count1 ==1) {
@@ -96,8 +96,8 @@ public class GamePanel extends JPanel implements Runnable {
 			}
 		}
 		
-		if (powerupRect2.intersects(paddleRect) && count2 < 2) {
-			ballSize += 10;
+		if (powerupRect2.intersects(paddleRect) && count2 == 0 ) {
+			ballSize += 20;
 			ball = new Ball(ballSize);
 			count2 +=1;
 			if (count2 ==1) {
