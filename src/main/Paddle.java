@@ -6,15 +6,14 @@ import java.awt.Rectangle;
 
 public class Paddle {
 
-	private double x;
+	static private double x = MainMenu.WIDTH/2;
 	private int width, height;
 	
 	public final int y = MainMenu.HEIGHT - 100;
 	
-	public Paddle() {
-		this.width = 75;
+	public Paddle(int w) {
+		this.width = w;
 		this.height = 10;
-		x = MainMenu.WIDTH/2 - this.width/2;
 	}
 	
 	public void update() {

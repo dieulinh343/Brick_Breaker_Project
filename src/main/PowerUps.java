@@ -2,6 +2,7 @@ package main;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -11,12 +12,14 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class PowerUps {
-	private double PUx, PUy, speed;
+	private int PUx, PUy, speed;
+	private int powerSize;
 	Image pic;
 	
-	public PowerUps(int x, int y, String s) {
+	public PowerUps(int x, int y, int size, String s) {
 		this.PUx = x;
 		this.PUy = y;
+		this.powerSize = size;
 		
 		this.speed = 1;
 		
@@ -27,36 +30,28 @@ public class PowerUps {
 			e.printStackTrace();
 		}
 	}
-	
-	public void extendPaddle(){
+
+	public void move(){
 		PUy += speed;
 		
 		
 	}
 	
-	public void draw(Graphics2D g) {
-		 g.setColor(Color.DARK_GRAY);
-		 g.setStroke(new BasicStroke(4));
-		 g.drawOval((int) , (int) y, ballSize, ballSize);
+	public void draw(Graphics2D g, Component c) {
+		 g.drawImage(pic, PUx, PUy, powerSize , powerSize, c);
 		 
+	}
+	public void delPower() {
+		this.powerSize = 0;
 	}
 	
-	public void draw(Graphics2D g) {
-		 g.setColor(Color.DARK_GRAY);
-		 g.setStroke(new BasicStroke(4));
-		 g.drawOval((int) x, (int) y, ballSize, ballSize);
-		 
-	}
 	
 	public Rectangle getRect() {
-		return new Rectangle((int) x,(int) y, ballSize, ballSize);
+		return new Rectangle((int) PUx,(int) PUy, powerSize, powerSize);
 	}
 	
-	public double getX() {return this.x;}
+	public double getPUx() {return this.PUx;}
 	
-	public double getDY() {return this.dy;}
-	public void setDY(double dy) {this.dy = dy;}
-	
-	public double getDX() {return this.dx;}
-	public void setDX(double dx) {this.dx = dx;}
+	public double getPUy() {return this.PUy;}
+
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BrickBreakerProject</name>
+	<name>BrickBreak1</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,21 +14,10 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/powerUp1.png</name>
-			<type>1</type>
-			<locationURI>PROJECT_LOC/powerUp1.png</locationURI>
-		</link>
-		<link>
-			<name>src/powerUp4.png</name>
-			<type>1</type>
-			<locationURI>PROJECT_LOC/powerUp4.png</locationURI>
-		</link>
-		<link>
-			<name>src/powerUp6.png</name>
-			<type>1</type>
-			<locationURI>PROJECT_LOC/powerUp6.png</locationURI>
-		</link>
-	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PROJECT_LOC</name>
+			<value>$%7BPARENT-2-PROJECT_LOC%7D/BrickBreak</value>
+		</variable>
+	</variableList>
 </projectDescription>

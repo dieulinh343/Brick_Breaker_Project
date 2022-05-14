@@ -4,21 +4,25 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.util.Random;
+
 import main.Constants;
 
 public class Ball {
-	private double x, y, dx, dy;
-	private int ballSize = 15;
+	static private double x = 200 ,y = 200;
+	static private double dx =3, dy =5;
+	private int ballSize;
 	private boolean lose = false;
+	Random generator = new Random();
 	
-	public Ball() {
-		this.x = 200;
-		this.y = 200;
+	
+	public Ball(int size) {
 		
-		this.dx = 1;
-		this.dy = 3; 
+		
+		this.ballSize = size;
 		
 	}
+
 	
 	public void update() {
 		setPosition();
